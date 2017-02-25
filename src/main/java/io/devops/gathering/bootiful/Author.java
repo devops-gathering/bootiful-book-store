@@ -1,7 +1,6 @@
 package io.devops.gathering.bootiful;
 
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import java.util.Collection;
 
 /**
@@ -11,9 +10,12 @@ import java.util.Collection;
 public class Author {
 
     @Id
+    @GeneratedValue(strategy = GenerationType.AUTO)
     private long id;
     private String firstName;
     private String lastName;
+
+    @OneToMany(cascade = CascadeType.ALL, mappedBy = "author")
     private Collection<Book> publishedBooks;
 
     public String getFirstName() {

@@ -1,9 +1,6 @@
 package io.devops.gathering.bootiful;
 
-import org.springframework.data.annotation.Id;
-
-import javax.persistence.Entity;
-import javax.persistence.ManyToMany;
+import javax.persistence.*;
 import java.util.Collection;
 
 /**
@@ -15,8 +12,10 @@ public class Book {
     @Id
     private String iban;
 
-    private String title;
+    @ManyToOne
     private Author author;
+
+    private String title;
     private String summary;
 
     @ManyToMany(mappedBy = "books")

@@ -1,0 +1,12 @@
+spring:
+  datasource:
+    url: "jdbc:postgresql://localhost:5432"
+    user: "postgres"
+    password: "postgres"
+
+spring.jpa:
+  database-platform: org.hibernate.dialect.PostgreSQLDialect
+  generate-ddl: true
+  show-sql: true
+  hibernate:
+    ddl-auto: create
