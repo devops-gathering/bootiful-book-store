@@ -1,6 +1,7 @@
 package io.devops.gathering.bootiful
 
 import com.groovycoder.spockdockerextension.Docker
+import com.groovycoder.spockdockerextension.Env
 import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTestDatabase
 import org.springframework.boot.test.autoconfigure.orm.jpa.DataJpaTest
@@ -12,7 +13,10 @@ import static org.springframework.boot.test.autoconfigure.jdbc.AutoConfigureTest
 @ContextConfiguration
 @DataJpaTest
 @AutoConfigureTestDatabase(replace = NONE)
-@Docker(image = "postgres", ports = ["5432:5432"])
+@Docker(image = "postgres", ports = ["5432:5432"], env = [
+        @Env(key = "POSTGRES_USER", value = "foo"),
+        @Env(key = "POSTGRES_PASSWORD", value = "secret")
+])
 class BookRepositoryTests extends Specification {
 
     @Autowired

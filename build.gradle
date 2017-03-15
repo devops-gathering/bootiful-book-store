@@ -27,7 +27,7 @@ dependencies {
 	runtime('org.postgresql:postgresql')
 
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile 'com.github.testcontainers:testcontainers-spock:9463326469'
+    testCompile 'com.github.testcontainers:testcontainers-spock:064f5fef26fc19832d3ac536ae469415c048c9b0'
     testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.0-groovy-2.4'
 
 }
