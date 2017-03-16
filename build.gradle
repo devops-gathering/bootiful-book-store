@@ -16,6 +16,7 @@ apply plugin: 'org.springframework.boot'
 sourceCompatibility = 1.8
 
 repositories {
+	mavenLocal()
 	mavenCentral()
     maven { url 'https://jitpack.io' }
 }
@@ -25,9 +26,11 @@ dependencies {
 	compile('org.springframework.boot:spring-boot-starter-data-rest')
 	compile('org.springframework.boot:spring-boot-starter-data-jpa')
 	runtime('org.postgresql:postgresql')
-
 	testCompile('org.springframework.boot:spring-boot-starter-test')
-    testCompile 'com.github.testcontainers:testcontainers-spock:064f5fef26fc19832d3ac536ae469415c048c9b0'
+    testCompile 'com.github.testcontainers:testcontainers-spock:5e50b96fa6ff8112e2f323e2f26cbdb0b1528cdc'
+	testCompile group: 'org.testcontainers', name: 'postgresql', version: '1.2.0'
+
+
     testCompile group: 'org.spockframework', name: 'spock-spring', version: '1.0-groovy-2.4'
 
 }

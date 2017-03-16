@@ -10,7 +10,7 @@ class BookStoreApplicationTests extends Specification {
 
     def "should boot up"() {
         expect:
-        true
+        false
     }
 
     def "gives a list of all books stored in dataSource"() {
