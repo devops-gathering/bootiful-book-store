@@ -1,7 +1,0 @@
-version: "2"
-services:
-  postgres:
-    image: postgres:9.6
-    environment:
-      - POSTGRES_USER=boot
-      - POSTGRES_PASSWORD=secret

@@ -8,11 +8,6 @@ import spock.lang.Specification
 @SpringBootTest
 class BookStoreApplicationTests extends Specification {
 
-    def "should boot up"() {
-        expect:
-        false
-    }
-
     def "gives a list of all books stored in dataSource"() {
 
     }
