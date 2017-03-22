@@ -1,7 +1,6 @@
 package io.devops.gathering.bootiful;
 
 import javax.persistence.*;
-import java.util.Collection;
 
 /**
  * Ancient tome of Knowledge.
@@ -12,14 +11,12 @@ public class Book {
     @Id
     private String iban;
 
-    @ManyToOne
-    private Author author;
+    private String author;
 
     private String title;
     private String summary;
 
-    @ManyToMany(mappedBy = "books")
-    private Collection<Genre> associatedGenres;
+    private String genre;
 
     public String getIban() {
         return iban;
@@ -37,11 +34,11 @@ public class Book {
         this.title = title;
     }
 
-    public Author getAuthor() {
+    public String getAuthor() {
         return author;
     }
 
-    public void setAuthor(Author author) {
+    public void setAuthor(String author) {
         this.author = author;
     }
 
@@ -53,12 +50,12 @@ public class Book {
         this.summary = summary;
     }
 
-    public Collection<Genre> getAssociatedGenres() {
-        return associatedGenres;
+    public String getGenre() {
+        return genre;
     }
 
-    public void setAssociatedGenres(Collection<Genre> associatedGenres) {
-        this.associatedGenres = associatedGenres;
+    public void setGenre(String genre) {
+        this.genre = genre;
     }
 
     @Override
